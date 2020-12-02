@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]] ; then
+    echo 'Please provide the name of the new directory: ./setup-new-day [dayX]'
+    exit 0
+fi
+
+cp -r day-template "$1"
+cd "$1" || exit
+aocdl -wait -force
