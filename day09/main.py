@@ -1,4 +1,8 @@
+target = -1
+
+
 def part1(input):
+    global target
     l = [x for x in map(int, input)]
 
     for i, item in enumerate(l):
@@ -11,12 +15,12 @@ def part1(input):
                 sums.append(l[x] + l[y])
 
         if item not in sums:
+            target = item
             return item
 
 
 def part2(input):
     l = [x for x in map(int, input)]
-    target = 27911108
 
     for i in range(0, len(l)):
         sums = []
